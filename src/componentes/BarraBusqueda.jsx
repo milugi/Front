@@ -10,7 +10,7 @@ function BarraBusqueda() {
     const params = useParams();
 
     const cargarDatos = async (correo) => {
-        const response = await fetch(`http://localhost:4000/Usuario2/${correo}`)
+        const response = await fetch(`https://bookstore-backend.onrender.com/Usuario2/${correo}`)
         const data = await response.json()
         setDatos(data);
     };
@@ -29,7 +29,7 @@ function BarraBusqueda() {
 
     //cargar las tareas
     const cargarTareas = async () => {
-        const response = await fetch('http://localhost:4000/Ejemplares')
+        const response = await fetch('https://bookstore-backend.onrender.com/Ejemplares')
         const data = await response.json()
         setGenero(data);  
     };
@@ -59,14 +59,14 @@ function BarraBusqueda() {
                     console.log("Se ecnontro un genero");
                     console.log(datos.correo)
                     console.log(object)
-                    (window.location.href = `http://localhost:3000/homeG/${datos.correo}/${buscar.elemento}`)
+                    (window.location.href = `https://front-three-gold.vercel.app//homeG/${datos.correo}/${buscar.elemento}`)
                 } else {
                     if(object.titulo === buscar.elemento) {
                         console.log('Se encontro un titulo')
-                        (window.location.href = `http://localhost:3000/homeT/${datos.correo}/${buscar.elemento}`)
+                        (window.location.href = `https://front-three-gold.vercel.app//homeT/${datos.correo}/${buscar.elemento}`)
                     } else {
                         console.log('No se encontro nada');
-                        (window.location.href = `http://localhost:3000/home/${datos.correo}`)
+                        (window.location.href = `https://front-three-gold.vercel.app//home/${datos.correo}`)
                     }
                 }
             });
