@@ -11,7 +11,7 @@ const SwipeToSlide = () => {
     const params = useParams();
 
     const cargarDatos = async (correo) => {
-        const response = await fetch(`http://localhost:4000/Usuario2/${correo}`)
+        const response = await fetch(`https://bookstore-backend.onrender.com/Usuario2/${correo}`)
         const data = await response.json()
         setDatos(data);
     };
@@ -26,7 +26,7 @@ const SwipeToSlide = () => {
 
   const getEjemplares = async () => {
     try {
-      const response = await fetch(`http://localhost:4000/Ejemplares`);
+      const response = await fetch(`https://bookstore-backend.onrender.com/Ejemplares`);
       const jsonData = await response.json();
       setEjemplares(jsonData);
     } catch (err) {
