@@ -13,7 +13,7 @@ function prueba() {
         e.preventDefault();
         if (datos.id_rol == 10) {
             console.log('es usuario')
-            (window.location.href = `http://localhost:3000/carrito?carrito=${datos.correo}`)
+            (window.location.href = `https://front-three-gold.vercel.app//carrito?carrito=${datos.correo}`)
         } else {
             console.log('es admin y el boton no funciona')
         }
@@ -23,10 +23,10 @@ function prueba() {
         e.preventDefault();
         if (datos.id_rol == 11){
             console.log('bien')
-            (window.location.href = `http://localhost:3000/homeadmin/${datos.correo}`)
+            (window.location.href = `https://front-three-gold.vercel.app//homeadmin/${datos.correo}`)
         }   else {
             console.log('va para home nomas')
-            (window.location.href = `http://localhost:3000/home/${datos.correo}`)
+            (window.location.href = `https://front-three-gold.vercel.app//home/${datos.correo}`)
         }
     };
 
