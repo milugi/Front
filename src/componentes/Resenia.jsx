@@ -10,7 +10,7 @@ const ListaResenia = () => {
     let { id_ejemplar } = useParams();
 
     const loadresenias = async () => {
-        const response = await fetch (`http://localhost:4000/prueba2/${id_ejemplar}`)
+        const response = await fetch (`https://bookstore-backend.onrender.com/prueba2/${id_ejemplar}`)
         const data =  await response.json ()
         setResenia(data)
     }
