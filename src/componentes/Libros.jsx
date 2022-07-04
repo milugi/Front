@@ -16,7 +16,7 @@ const LibrosAd = () => {
 
     const getEjemplares = async () => {
         try {
-            const response = await fetch(`http://localhost:4000/Ejemplares`);
+            const response = await fetch(`https://bookstore-backend.onrender.com/Ejemplares`);
             const jsonData = await response.json();
             setEjemplares(jsonData);
         } catch (err) {
@@ -25,7 +25,7 @@ const LibrosAd = () => {
     };
 
     const handleDelete = async (id_ejemplar) => {
-        const res = await fetch(`http://localhost:4000/Ejemplar/${id_ejemplar}`, {
+        const res = await fetch(`https://bookstore-backend.onrender.com/Ejemplar/${id_ejemplar}`, {
             method: 'DELETE',
         })
         setEjemplares(ejemplares.filter(ejemplar => ejemplar.id_ejemplar !== id_ejemplar));
@@ -39,7 +39,7 @@ const LibrosAd = () => {
     useEffect(() => { console.log(ejemplares) }, [ejemplares])
 
     const cargarDatos = async (correo) => {
-        const response = await fetch(`http://localhost:4000/Usuario2/${correo}`)
+        const response = await fetch(`https://bookstore-backend.onrender.com/Usuario2/${correo}`)
         const data = await response.json()
         setDatos(data);
         console.log(data)
