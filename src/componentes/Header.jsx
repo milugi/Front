@@ -15,7 +15,7 @@ function Header(){
     const params = useParams();
 
     const cargarDatos = async (correo) => {
-        const response = await fetch(`http://localhost:4000/Usuario2/${correo}`)
+        const response = await fetch(`https://bookstore-backend.onrender.com/Usuario2/${correo}`)
         const data = await response.json()
         setDatos(data);
         console.log(data)
@@ -35,10 +35,10 @@ function Header(){
         e.preventDefault();
         if (datos.id_rol == 11){
             console.log('bien')
-            (window.location.href = `http://localhost:3000/homeadmin/${datos.correo}`)
+            (window.location.href = `https://front-three-gold.vercel.app//homeadmin/${datos.correo}`)
         }   else {
             console.log('va para home nomas')
-            (window.location.href = `http://localhost:3000/home/${datos.correo}`)
+            (window.location.href = `https://front-three-gold.vercel.app//home/${datos.correo}`)
         }
     };
 
@@ -46,7 +46,7 @@ function Header(){
         e.preventDefault();
         if (datos.id_rol == 10) {
             console.log('es usuario')
-            (window.location.href = `http://localhost:3000/carrito?carrito=${datos.correo}`)
+            (window.location.href = `https://front-three-gold.vercel.app//carrito?carrito=${datos.correo}`)
         } else {
             console.log('es admin y el boton no funciona')
         }
