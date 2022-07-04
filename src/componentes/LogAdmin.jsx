@@ -17,7 +17,7 @@ function LogAdmin() {
     }
     ])
     const cargarTareas = async () => {
-        const response = await fetch('http://localhost:4000/Usuarios')
+        const response = await fetch('https://bookstore-backend.onrender.com/Usuarios')
         const data = await response.json()
         setUsers(data);     
         console.log(data);
@@ -38,7 +38,7 @@ function LogAdmin() {
                 (window.location.href = `http://localhost:3000/misdatosadmin/${object.correo}`)
             } else {
                 console.log('No se encontro');
-                (window.location.href = 'http://localhost:3000/')
+                (window.location.href = 'https://front-three-gold.vercel.app//')
             }
         });
     };
