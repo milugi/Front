@@ -19,16 +19,16 @@ function Facebook2() {
         console.log(respuesta.name)
         console.log("2")
         console.log(datos)
-        fetch('http://localhost:4000/Usuario2', {
+        fetch('https://bookstore-backend.onrender.com/Usuario2', {
         method: 'POST',
         body: JSON.stringify(datos),
         headers: { "Content-Type": "application/json"},
         }); 
-       (window.location.href = `http://localhost:3000/misdatos2/${datos.correo}/edit`)
+       (window.location.href = `https://front-three-gold.vercel.app//misdatos2/${datos.correo}/edit`)
     }
     
     const handleSubmit = async (e) => {
-    await fetch('http://localhost:4000/Usuario2', {
+    await fetch('https://bookstore-backend.onrender.com/Usuario2', {
         method: 'POST',
         body: JSON.stringify(datos),
         headers: { "Content-Type": "application/json"},
