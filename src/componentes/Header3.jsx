@@ -14,7 +14,7 @@ function Header3(){
     const params = useParams();
 
     const cargarDatos = async (correo) => {
-        const response = await fetch(`http://localhost:4000/Usuario2/${correo}`)
+        const response = await fetch(`https://bookstore-backend.onrender.com/Usuario2/${correo}`)
         const data = await response.json()
         setDatos(data);
         console.log(data)
@@ -35,10 +35,10 @@ function Header3(){
         e.preventDefault();
         if (datos.id_rol == 11){
             console.log('bien')
-            (window.location.href = `http://localhost:3000/homeadmin/${datos.correo}`)
+            (window.location.href = `https://front-three-gold.vercel.app//homeadmin/${datos.correo}`)
         }   else {
             console.log('va para home nomas')
-            (window.location.href = `http://localhost:3000/home/${datos.correo}`)
+            (window.location.href = `https://front-three-gold.vercel.app//home/${datos.correo}`)
         }
     };
 
