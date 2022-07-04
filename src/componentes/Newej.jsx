@@ -11,7 +11,7 @@ function NuevoEjemplar() {
     const params2 = useParams();
 
     const cargarDatos = async (correo) => {
-        const response = await fetch(`http://localhost:4000/Usuario2/${correo}`)
+        const response = await fetch(`https://bookstore-backend.onrender.com/Usuario2/${correo}`)
         const data = await response.json()
         setDatos(data);
         console.log(data)
@@ -43,7 +43,7 @@ function NuevoEjemplar() {
     const handleSubmit = async (e) => {
 
         if (editing) {
-            await fetch(`http://localhost:4000/Ejemplar/${params.id_ejemplar}`, {
+            await fetch(`https://bookstore-backend.onrender.com/Ejemplar/${params.id_ejemplar}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" }, 
                 body: JSON.stringify(ejemplar),
