@@ -13,7 +13,7 @@ function DetalleEjemplar() {
   const params = useParams();
 
   const cargarDatos = async (correo) => {
-    const response = await fetch(`http://localhost:4000/Usuario2/${correo}`);
+    const response = await fetch(`https://bookstore-backend.onrender.com/Usuario2/${correo}`);
     const data = await response.json();
     setDatos(data);
   };
