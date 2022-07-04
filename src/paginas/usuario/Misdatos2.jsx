@@ -17,15 +17,15 @@ function Misdatos2 () {
         e.preventDefault();
 
         if (editing) {
-            await fetch(`http://localhost:4000/Usuario2/${params.correo}`, {
+            await fetch(`https://bookstore-backend.onrender.com/Usuario2/${params.correo}`, {
                 method: 'PUT',
                 headers: { "Content-Type": "application/json"},
                 body: JSON.stringify(datos), 
             })
             if (datos.id_rol == 11) {
-                {window.location.href = `http://localhost:3000/homeadmin/${params.correo}`}
+                {window.location.href = `https://front-three-gold.vercel.app//homeadmin/${params.correo}`}
             } else {
-            {window.location.href = `http://localhost:3000/home/${params.correo}`}
+            {window.location.href = `https://front-three-gold.vercel.app//home/${params.correo}`}
         }
         } 
     };
@@ -35,7 +35,7 @@ function Misdatos2 () {
     };
 
     const cargarDatos = async (correo) => {
-        const response = await fetch(`http://localhost:4000/Usuario2/${correo}`)
+        const response = await fetch(`https://bookstore-backend.onrender.com/Usuario2/${correo}`)
         const data = await response.json()
         setDatos(data);
         setEditing(true)
