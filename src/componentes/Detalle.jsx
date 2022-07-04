@@ -23,7 +23,7 @@ const ListadeLibros2 = () => {
   const getEjemplar = async () => {
     try {
       const response = await fetch(
-        `http://localhost:4000/Ejemplar/${id_ejemplar}`
+        `https://bookstore-backend.onrender.com/Ejemplar/${id_ejemplar}`
       );
       const jsonData = await response.json();
       console.log("Carga de ejemplares", jsonData);
