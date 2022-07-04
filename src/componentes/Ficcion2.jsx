@@ -11,7 +11,7 @@ const SwipeToSlide2 = () => {
     const params = useParams();
 
     const cargarDatos = async (correo) => {
-        const response = await fetch(`http://localhost:4000/Usuario2/${correo}`)
+        const response = await fetch(`https://bookstore-backend.onrender.com/Usuario2/${correo}`)
         const data = await response.json()
         setDatos(data);
     };
@@ -29,7 +29,7 @@ const SwipeToSlide2 = () => {
     ])
     //cargar las tareas
     const cargarTareas = async () => {
-        const response = await fetch('http://localhost:4000/Ejemplares')
+        const response = await fetch('https://bookstore-backend.onrender.com/Ejemplares')
         const data = await response.json()
         setGenero(data);  
     };
@@ -39,7 +39,7 @@ const SwipeToSlide2 = () => {
     }, [])
 
   const getEjemplares = async (e) => {
-        const response = await fetch(`http://localhost:4000/Ejemplar2/${params2.elemento}`);
+        const response = await fetch(`https://bookstore-backend.onrender.com/Ejemplar2/${params2.elemento}`);
         const jsonData = await response.json();
         setEjemplares(jsonData);
   };
