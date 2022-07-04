@@ -13,7 +13,7 @@ const NuevaResenia = () => {
     const params = useParams();
 
     const cargarDatos = async (correo) => {
-        const response = await fetch(`http://localhost:4000/Usuario2/${correo}`)
+        const response = await fetch(`https://bookstore-backend.onrender.com/Usuario2/${correo}`)
         const data = await response.json()
         setDatos(data);
     };
@@ -30,7 +30,7 @@ const NuevaResenia = () => {
 
     const getEjemplar = async () => {
         try {
-            const response = await fetch(`http://localhost:4000/Ejemplar/${id_ejemplar}`);
+            const response = await fetch(`https://bookstore-backend.onrender.com/Ejemplar/${id_ejemplar}`);
             const jsonData = await response.json();
             setEjemplares(jsonData);
         } catch (err) {
@@ -60,14 +60,14 @@ const NuevaResenia = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const res = await fetch("http://localhost:4000/Resenia2", {
+        const res = await fetch("https://bookstore-backend.onrender.com/Resenia2", {
             method: "POST",
             body: JSON.stringify(resen),
             headers: { "Content-Type": "application/json" },
         });
         const data = await res.json();
         console.log(data);
-        {window.location.href = `http://localhost:3000/${datos.correo}/detallejemplar/${id_ejemplar}`}
+        {window.location.href = `https://front-three-gold.vercel.app//${datos.correo}/detallejemplar/${id_ejemplar}`}
     };
 
 
